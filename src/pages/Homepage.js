@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import NavBar from "../components/Navbar/NavBar";
 const Homepage = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <p>Test HomePage</p>
+      <NavBar />
       <button onClick={() => navigate("/auth")}>Log out</button>
     </div>
   );

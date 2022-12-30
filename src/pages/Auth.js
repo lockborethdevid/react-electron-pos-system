@@ -26,7 +26,6 @@ const Auth = () => {
 
   const HandleSignupButton = async (e) => {
     e.preventDefault();
-    // console.log("Signup");'
     Signup(
       username,
       email,
@@ -35,8 +34,9 @@ const Auth = () => {
       storeLocation,
       storeName
     ).then((response) => {
-      navigate("/home");
-      // console.log(response);
+      if (response.status === 200) {
+        navigate("/home");
+      }
       console.log("successfully signup", response);
     });
   };
@@ -44,8 +44,9 @@ const Auth = () => {
   const HandleSigninButton = (e) => {
     e.preventDefault();
     Signin(email, password).then((response) => {
-      navigate("/home");
-      console.log(response);
+      if (response.status === 200) {
+        navigate("/home");
+      }
       console.log("successfully signup", response);
     });
   };

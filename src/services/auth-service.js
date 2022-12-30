@@ -29,6 +29,9 @@ export const Signup = (
       }
     )
     .then((response) => {
+      if (response.data.results) {
+        localStorage.setItem("user", response.data.results);
+      }
       return response;
     });
 };
@@ -49,8 +52,15 @@ export const Signin = (email, password) => {
       }
     )
     .then((response) => {
-      return response.data;
+      if (response.data.results) {
+        localStorage.setItem("user", response.data.results);
+      }
+      return response;
     });
+};
+
+export const logout = () => {
+  localStorage.removeItem("user");
 };
 
 // const authService = {

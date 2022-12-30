@@ -36,7 +36,7 @@ const Auth = () => {
       storeName
     ).then((response) => {
       navigate("/home");
-      console.log(response);
+      // console.log(response);
       console.log("successfully signup", response);
     });
   };
@@ -54,6 +54,9 @@ const Auth = () => {
       {/* Signup Form */}
       <div className="form-container sign-up-container">
         <form action="" onSubmit={HandleSignupButton}>
+          <div>
+            <p></p>
+          </div>
           <h1>Create Account</h1>
           <span>or use your email for registration</span>
           <input

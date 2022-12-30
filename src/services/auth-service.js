@@ -29,7 +29,7 @@ export const Signup = (
       }
     )
     .then((response) => {
-      return response.data;
+      return response;
     });
 };
 

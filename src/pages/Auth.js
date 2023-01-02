@@ -49,6 +49,7 @@ const Auth = () => {
       }
       console.log("successfully signup", response);
     });
+    navigate("/home");
   };
   return (
     <div className="container" id="auth-container">
@@ -167,6 +168,7 @@ const Auth = () => {
             >
               Sign Up
             </button>
+
           </div>
         </div>
       </div>

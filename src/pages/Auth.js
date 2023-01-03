@@ -14,12 +14,12 @@ const Auth = () => {
   const navigate = useNavigate();
 
   const clickSignupButton = () => {
-    document.getElementById("container").classList.add("right-panel-active");
+    document.getElementById("auth-container").classList.add("right-panel-active");
     setEmail("");
     setPassword("");
   };
   const clickSigninButton = () => {
-    document.getElementById("container").classList.remove("right-panel-active");
+    document.getElementById("auth-container").classList.remove("right-panel-active");
     setEmail("");
     setPassword("");
   };
@@ -49,9 +49,10 @@ const Auth = () => {
       }
       console.log("successfully signup", response);
     });
+    navigate("/home");
   };
   return (
-    <div className="container" id="container">
+    <div className="container" id="auth-container">
       {/* Signup Form */}
       <div className="form-container sign-up-container">
         <form action="" onSubmit={HandleSignupButton}>
@@ -167,6 +168,7 @@ const Auth = () => {
             >
               Sign Up
             </button>
+
           </div>
         </div>
       </div>

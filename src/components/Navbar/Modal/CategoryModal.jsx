@@ -15,10 +15,10 @@ function CategoryModal(props) {
                 <Modal.Title id="contained-modal-title-vcenter">Category</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form className="d-flex">
+                <Form className="d-flex flex-column">
                     {/* Category name */}
-                    <Form.Group className="mb-3 w-100 " controlId="categoryName">
-                        <Form.Label>Name</Form.Label>
+                    <Form.Group className="mb-3" controlId="categoryName">
+                        <h6>Name</h6>
                         <Form.Control type="text" placeholder="Enter a category name" />
                     </Form.Group>
 

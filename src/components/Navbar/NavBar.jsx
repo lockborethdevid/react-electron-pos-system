@@ -23,17 +23,18 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav ">
-          <div className="d-flex justify-content-between">
-            <div className="d-flex">
+          <div className="d-flex justify-content-between w-100">
+            <div className="d-flex ~">
               <Nav className="mx-3 mb-3 btn-product">
                 <div class="button-list pull-left m-t-15 m-l-10">
                   <div class="btn-group p_one">
-                    <button
+                    <button 
+        
                       id="productModal"
                       data-toggle="modal"
                       data-target="#Products"
                       type="button"
-                      class="btn btn-default waves-effect waves-light"
+                      class="btn btn-default btn-sm waves-effect waves-light"
                     >
                       <span class="btn-label">
                         <i class=" 	glyphicon glyphicon-barcode"></i>{" "}
@@ -43,7 +44,7 @@ const NavBar = () => {
                     <button
                       id="newProductModal"
                       type="button"
-                      class="btn btn-warning waves-effect waves-light"
+                      class="btn btn-warning  btn-sm waves-effect waves-light"
                       onClick={() => setProductModalShow(true)}
                     >
                       <FontAwesomeIcon icon={faPlus} color="#ffff" size={"lg"} />
@@ -57,7 +58,7 @@ const NavBar = () => {
                     <button
                       id="categoryModal"
                       type="button"
-                      class="btn btn-default waves-effect waves-light"
+                      class="btn  btn-sm btn-default waves-effect waves-light"
                     >
                       <span class="btn-label">
                         <i class="glyphicon glyphicon-th"></i>{" "}
@@ -67,7 +68,7 @@ const NavBar = () => {
                     <button
                       id="newCategoryModal"
                       type="button"
-                      class="btn btn-warning waves-effect waves-light"
+                      class="btn  btn-sm btn-warning waves-effect waves-light"
                       onClick={() => setCategoryModalShow(true)}
                     >
                       <FontAwesomeIcon icon={faPlus} color="#ffff" size={"lg"} />
@@ -80,7 +81,7 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-info waves-effect waves-light"
+                    class="btn  btn-sm btn-info waves-effect waves-light"
                   >
                     <span>
                       <FontAwesomeIcon
@@ -99,7 +100,7 @@ const NavBar = () => {
                     id="customzerOrder"
                     type="button"
                     onclick="$(this).getCustomerOrders()"
-                    class="btn btn-info waves-effect waves-light"
+                    class=" btn-sm btn btn-info waves-effect waves-light"
                   >
                     <span class="btn-label">
                       <FontAwesomeIcon icon={faUser} color="#ffff" size={"lg"} />
@@ -116,7 +117,7 @@ const NavBar = () => {
                     <button
                       id="setting"
                       type="button"
-                      class="btn btn-warning waves-effect waves-light"
+                      class="btn  btn-sm btn-warning waves-effect waves-light"
                     >
                       <FontAwesomeIcon icon={faGear} color="#ffff" size={"lg"} />
                     </button>
@@ -128,7 +129,7 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-info waves-effect waves-light"
+                    class="btn btn-info  btn-sm waves-effect waves-light"
                   >
                     <span>
                       <FontAwesomeIcon
@@ -146,7 +147,7 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-info waves-effect waves-light"
+                    class="btn btn-info  btn-sm waves-effect waves-light"
                   >
                     <span>
                       <FontAwesomeIcon icon={faUser} color="#ffff" size={"lg"} />
@@ -156,7 +157,7 @@ const NavBar = () => {
                   <button
                     id="addUser"
                     type="button"
-                    class="btn btn-secondary waves-effect waves-light"
+                    class="btn btn-secondary  btn-sm waves-effect waves-light"
                   >
                     <FontAwesomeIcon icon={faPlus} color="#ffff" size={"lg"} />
                   </button>
@@ -167,7 +168,7 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-info waves-effect waves-light"
+                    class="btn btn-info  btn-sm waves-effect waves-light"
                   >
                     <span>
                       <FontAwesomeIcon icon={faUser} color="#ffff" size={"lg"} />
@@ -181,7 +182,7 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-warning waves-effect waves-light"
+                    class="btn btn-warning  btn-sm waves-effect waves-light"
                   >
                     <FontAwesomeIcon icon={faRightFromBracket} color="#ffff" size={"lg"} />
                   </button>
@@ -192,7 +193,7 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-danger waves-effect waves-light"
+                    class="btn btn-danger  btn-sm waves-effect waves-light"
                   >
                     <FontAwesomeIcon icon={faPowerOff} color="#ffff" size={"lg"} />
                   </button>

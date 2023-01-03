@@ -57,11 +57,11 @@ a:hover {
 }
 
 button {
-  border-radius: 20px;
+  border-radius: 30px;
   border: 1px solid #5fbeaa;
   background-color: #5fbeaa;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 12px ;
   font-weight: bold;
   padding: 12px 45px;
   letter-spacing: 1px;

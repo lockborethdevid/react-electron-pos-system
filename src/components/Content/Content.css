@@ -29,3 +29,28 @@
   border-radius: 10px;
   outline: 1px solid slategrey;
 }
+
+
+.card {
+  padding: 5px;
+  width: 17%;
+  display: inline-block;
+  box-shadow: 1px 1px 10px black;
+  border-radius: 5px;
+  margin: 1%;
+  background-color: #f2f4f2;
+}
+.title{
+  padding-top: 10px;
+}
+.image img {
+  object-fit: contain;
+  height: 90px;
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+}
+.des>p{
+  font-size: 10px !important;
+}

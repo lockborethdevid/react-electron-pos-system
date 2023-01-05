@@ -6,7 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductModel from "./Modal/ProductModal";
 import CategoryModal from "./Modal/CategoryModal";
 import {
+  faBarcode,
+  faCreditCard,
+  faFaceGrinWide,
   faGear,
+  faGrin,
   faPlus,
   faPowerOff,
   faRightFromBracket,
@@ -26,25 +30,35 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav ">
           <div className="d-flex justify-content-between w-100">
             <div className="d-flex ~">
-              <Nav className="mx-3 mb-3 btn-product">
+              <Nav className="mx-2 mb-3 btn-product">
+
                 <div className="button-list pull-left m-t-15 m-l-10">
                   <div className="btn-group p_one">
+                    <button
+                      id="barcodeIcon"
+                      type="button"
+                      className="btn barIcon waves-effect waves-light"
+                    >
+                      <FontAwesomeIcon
+                        icon={faBarcode}
+                        color="#ffff"
+                        size={"sm"}
+                      />
+
+                    </button>
                     <button
                       id="productModal"
                       data-toggle="modal"
                       data-target="#Products"
                       type="button"
-                      class="btn btn-default btn-sm waves-effect waves-light"
+                      class="btn btn-nav btn-default  waves-effect waves-light"
                     >
-                      <span class="btn-label">
-                        <i class=" 	glyphicon glyphicon-barcode"></i>{" "}
-                      </span>{" "}
                       Products
                     </button>
                     <button
-                      id="newProductModal"
+                      id="plusIcon"
                       type="button"
-                      className="btn btn-warning  btn-sm waves-effect waves-light"
+                      className="btn btn-warning  plusIcon waves-effect waves-light"
                       onClick={() => setProductModalShow(true)}
 
                     >
@@ -62,19 +76,25 @@ const NavBar = () => {
                 <div class="button-list pull-left m-t-15 m-l-10">
                   <div class="btn-group p_two">
                     <button
+                      id="gridIcon"
+                      type="button"
+                      class="btn  gridIcon btn-warning waves-effect waves-light"
+
+                    >
+                      ⋮⋮⋮
+                    </button>
+                    <button
                       id="categoryModal"
                       type="button"
-                      class="btn  btn-sm btn-default waves-effect waves-light"
+                      class="btn  btn-nav btn-default waves-effect waves-light"
                     >
-                      <span class="btn-label">
-                        <i class="glyphicon glyphicon-th"></i>{" "}
-                      </span>{" "}
+
                       Categories
                     </button>
                     <button
-                      id="newCategoryModal"
+                      id="plusIcon"
                       type="button"
-                      class="btn  btn-sm btn-warning waves-effect waves-light"
+                      class="btn  plusIcon btn-warning waves-effect waves-light"
                       onClick={() => setCategoryModalShow(true)}
                     >
                       <FontAwesomeIcon
@@ -86,39 +106,43 @@ const NavBar = () => {
                   </div>
                 </div>
               </Nav>
-              <Nav className="mx-1 mb-3">
+
+              <Nav className="mx-2 mb-3">
                 <div class="button-list pull-left m-t-15 m-l-10">
+                  <button className="btn tapIcon">
+                    <FontAwesomeIcon
+                      icon={faShoppingBasket}
+                      color="#ffff"
+                      size={"sm"}
+                    />
+                  </button>
                   <button
                     id="openTab"
                     type="button"
-                    class="btn  btn-sm btn-info waves-effect waves-light"
+                    class="btn  btn-nav btn-info waves-effect waves-light"
                   >
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faShoppingBasket}
-                        color="#ffff"
-                        size={"lg"}
-                      />
-                    </span>{" "}
+
                     Open Tabs
                   </button>
                 </div>
               </Nav>
-              <Nav className="mx-1 mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+              <Nav className="mb-3">
+                <div class="button-list pull-left m-t-15 m-l-10 d-flex">
+                  <button className="btn userIcon">
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      color="#ffff"
+                      size={"sm"}
+                    />
+                  </button>
+
                   <button
                     id="customzerOrder"
                     type="button"
                     onclick="$(this).getCustomerOrders()"
-                    class=" btn-sm btn btn-info waves-effect waves-light"
+                    class=" btn-nav btn btn-info waves-effect waves-light "
                   >
-                    <span class="btn-label">
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        color="#ffff"
-                        size={"lg"}
-                      />
-                    </span>{" "}
+
                     Customer Orders
                   </button>
                 </div>
@@ -131,89 +155,94 @@ const NavBar = () => {
                     <button
                       id="setting"
                       type="button"
-                      class="btn  btn-sm btn-warning waves-effect waves-light"
+                      class="btn  btn-nav btn-warning waves-effect waves-light"
                     >
                       <FontAwesomeIcon
                         icon={faGear}
                         color="#ffff"
-                        size={"lg"}
+                        size={"sm"}
                       />
                     </button>
                   </div>
                 </div>
               </Nav>
+
+
               <Nav className="mx-1 mb-3">
                 <div class="button-list pull-left m-t-15 m-l-10">
+                  <button className="btn creditIcon waves-effect waves-light">
+                    <FontAwesomeIcon
+                      icon={faCreditCard}
+                      color="#ffff"
+                      size={"sm"}
+                    />
+                  </button>
                   <button
-                    id="openTab"
+                    id="transaction"
                     type="button"
-                    class="btn btn-info  btn-sm waves-effect waves-light"
+                    class="btn  btn-nav waves-effect waves-light"
                   >
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faShoppingBasket}
-                        color="#ffff"
-                        size={"lg"}
-                      />
-                    </span>{" "}
                     Transactions
                   </button>
                 </div>
               </Nav>
               <Nav className="mx-1 mb-3">
                 <div class="button-list pull-left m-t-15 m-l-10">
+                  <button className="btn userIcons">
+
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      color="#ffff"
+                      size={"sm"}
+                    />
+                  </button>
                   <button
-                    id="openTab"
+                    id="user"
                     type="button"
-                    class="btn btn-info  btn-sm waves-effect waves-light"
+                    class="btn   btn-nav waves-effect waves-light"
                   >
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        color="#ffff"
-                        size={"lg"}
-                      />
-                    </span>{" "}
+
+
                     Users
                   </button>
                   <button
-                    id="addUser"
+                    id="plusUser"
                     type="button"
-                    class="btn btn-secondary  btn-sm waves-effect waves-light"
+                    class="btn plusUserIcon   btn-nav waves-effect waves-light"
                   >
-                    <FontAwesomeIcon icon={faPlus} color="#ffff" size={"lg"} />
+                    <FontAwesomeIcon icon={faPlus} color="#808080" size={"lg"} />
                   </button>
                 </div>
               </Nav>
               <Nav className="mx-1 mb-3">
                 <div class="button-list pull-left m-t-15 m-l-10">
+                  <button className="btn user-btn">
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      color="#808080"
+                      size={"sm"}
+                    />
+                  </button>
                   <button
-                    id="openTab"
+                    id="username"
                     type="button"
-                    class="btn btn-info  btn-sm waves-effect waves-light"
+                    class="btn text-secondary  btn-nav waves-effect waves-light"
                   >
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        color="#ffff"
-                        size={"lg"}
-                      />
-                    </span>{" "}
                     Username
                   </button>
                 </div>
               </Nav>
-              <Nav className="mx-1 mb-3">
+              <Nav className="mb-3">
                 <div class="button-list pull-left m-t-15 m-l-10">
                   <button
-                    id="openTab"
+                    id="exit"
                     type="button"
-                    class="btn btn-warning  btn-sm waves-effect waves-light"
+                    class="btn btn-warning  btn-nav waves-effect waves-light"
                   >
                     <FontAwesomeIcon
                       icon={faRightFromBracket}
                       color="#ffff"
-                      size={"lg"}
+                      size={"sm"}
                     />
                   </button>
                 </div>
@@ -221,15 +250,15 @@ const NavBar = () => {
               <Nav className="mx-1 mb-3">
                 <div class="button-list pull-left m-t-15 m-l-10">
                   <button
-                    id="openTab"
+                    id="close"
                     type="button"
-                    className="btn btn-danger  btn-sm waves-effect waves-light"
+                    className="btn btn-danger  btn-nav waves-effect waves-light"
                     onClick={() => navigate("/auth")}
                   >
                     <FontAwesomeIcon
                       icon={faPowerOff}
                       color="#ffff"
-                      size={"lg"}
+                      size={"sm"}
                     />
                   </button>
                 </div>

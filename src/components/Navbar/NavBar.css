@@ -1,9 +1,106 @@
 #productModal,
 #categoryModal,
-#setting {
+#setting,
+#transaction,
+#user {
   background-color: #5fbeaa !important;
 }
 
 button {
   color: white !important;
+}
+
+.btn-nav {
+  height: 34px !important;
+  border: none !important;
+  border-radius: 5px 0px 0px 5px;
+
+}
+
+.userIcon,
+.tapIcon {
+  border-radius: 5px 0px 0px 5px !important;
+  background-color: #0cb6d8 !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+#customzerOrder,
+#openTab,
+#transaction {
+  border-radius: 0px 5px 5px 0px !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+#user {
+  border-radius: 0px !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+#productModal,
+#categoryModal {
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+.barIcon {
+  background-color: #56ab99 !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+.userIcons {
+  border-radius: 5px 0px 0px 5px !important;
+  background-color: #56ab99 !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+.plusUserIcon {
+  border-radius: 0px 5px 5px 0px !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+.creditIcon {
+  border-radius: 5px 0px 0px 5px !important;
+  background-color: #56ab99 !important;
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+.plusIcon,
+#username,
+.user-btn,
+#exit,
+#close {
+  height: 34px;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+.gridIcon {
+  background-color: #56ab99 !important;
+  height: 34px;
+  border: none !important;
+  line-height: 20px !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+#transaction {
+  height: 34px;
+  line-height: 20px !important;
+  text-align: center !important;
 }

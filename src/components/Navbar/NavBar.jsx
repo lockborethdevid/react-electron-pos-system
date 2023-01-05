@@ -33,28 +33,31 @@ const NavBar = () => {
               <Nav className="mx-2 mb-3 btn-product">
 
                 <div className="button-list pull-left m-t-15 m-l-10">
-                  <div className="btn-group p_one">
-                    <button
-                      id="barcodeIcon"
-                      type="button"
-                      className="btn barIcon waves-effect waves-light"
-                    >
-                      <FontAwesomeIcon
-                        icon={faBarcode}
-                        color="#ffff"
-                        size={"sm"}
-                      />
 
-                    </button>
-                    <button
-                      id="productModal"
-                      data-toggle="modal"
-                      data-target="#Products"
-                      type="button"
-                      class="btn btn-nav btn-default  waves-effect waves-light"
-                    >
-                      Products
-                    </button>
+                  <div className="btn-group p_one">
+                    <div>
+                      <button
+                        id="barcodeIcon"
+                        type="button"
+                        className="btn barIcon waves-effect waves-light"
+                      >
+                        <FontAwesomeIcon
+                          icon={faBarcode}
+                          color="#ffff"
+                          size={"sm"}
+                        />
+
+                      </button>
+                      <button
+                        id="productModal"
+
+                        type="button"
+                        class="btn btn-nav btn-default  waves-effect waves-light"
+                      >
+                        Products
+                      </button>
+                    </div>
+
                     <button
                       id="plusIcon"
                       type="button"

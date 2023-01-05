@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Content.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -47,7 +47,9 @@ const Content = () => {
                   </div>
                 </div>
                 <hr className="my-3" />
-                <div className="row"></div>
+                <div className="row">
+                  <div></div>
+                </div>
               </div>
             </div>
           </div>

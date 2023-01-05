@@ -9,10 +9,11 @@ import Content from "../components/Content/Content";
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const handleLogout = () => {
-    logout();
-    navigate("/auth");
-  };
+
+  // const handleLogout = () => {
+  //   logout();
+  //   navigate("/auth");
+  // };
   return (
     <div>
       <NavBar />

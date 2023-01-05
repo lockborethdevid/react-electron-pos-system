@@ -59,10 +59,6 @@ export const Signin = (email, password) => {
     });
 };
 
-export const logout = () => {
-  localStorage.removeItem("user");
-};
-
 // const authService = {
 //   signup,
 // };

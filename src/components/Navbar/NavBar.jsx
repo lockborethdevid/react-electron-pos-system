@@ -46,8 +46,9 @@ const NavBar = () => {
                       type="button"
                       class="btn btn-warning  btn-sm waves-effect waves-light"
                       onClick={() => setProductModalShow(true)}
+                  
                     >
-                      <FontAwesomeIcon icon={faPlus} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon  icon={faPlus} color="#ffff" size={"lg"} />
                     </button>
                   </div>
                 </div>

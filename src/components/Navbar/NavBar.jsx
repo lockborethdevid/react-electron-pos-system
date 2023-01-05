@@ -13,23 +13,23 @@ import {
   faShoppingBasket,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [modalCategoryShow, setCategoryModalShow] = React.useState(false);
   const [modalProductShow, setProductModalShow] = React.useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <Navbar bg="light" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
         <Navbar.Collapse id="basic-navbar-nav ">
           <div className="d-flex justify-content-between w-100">
             <div className="d-flex ~">
               <Nav className="mx-3 mb-3 btn-product">
-                <div class="button-list pull-left m-t-15 m-l-10">
-                  <div class="btn-group p_one">
-                    <button 
-        
+                <div className="button-list pull-left m-t-15 m-l-10">
+                  <div className="btn-group p_one">
+                    <button
                       id="productModal"
                       data-toggle="modal"
                       data-target="#Products"
@@ -44,11 +44,16 @@ const NavBar = () => {
                     <button
                       id="newProductModal"
                       type="button"
-                      class="btn btn-warning  btn-sm waves-effect waves-light"
+                      className="btn btn-warning  btn-sm waves-effect waves-light"
                       onClick={() => setProductModalShow(true)}
-                  
+
                     >
-                      <FontAwesomeIcon  icon={faPlus} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon
+                        icon={faPlus}
+                        color="#ffff"
+                        size={"lg"}
+                      />
+
                     </button>
                   </div>
                 </div>
@@ -72,7 +77,11 @@ const NavBar = () => {
                       class="btn  btn-sm btn-warning waves-effect waves-light"
                       onClick={() => setCategoryModalShow(true)}
                     >
-                      <FontAwesomeIcon icon={faPlus} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon
+                        icon={faPlus}
+                        color="#ffff"
+                        size={"lg"}
+                      />
                     </button>
                   </div>
                 </div>
@@ -104,7 +113,11 @@ const NavBar = () => {
                     class=" btn-sm btn btn-info waves-effect waves-light"
                   >
                     <span class="btn-label">
-                      <FontAwesomeIcon icon={faUser} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        color="#ffff"
+                        size={"lg"}
+                      />
                     </span>{" "}
                     Customer Orders
                   </button>
@@ -120,7 +133,11 @@ const NavBar = () => {
                       type="button"
                       class="btn  btn-sm btn-warning waves-effect waves-light"
                     >
-                      <FontAwesomeIcon icon={faGear} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon
+                        icon={faGear}
+                        color="#ffff"
+                        size={"lg"}
+                      />
                     </button>
                   </div>
                 </div>
@@ -151,7 +168,11 @@ const NavBar = () => {
                     class="btn btn-info  btn-sm waves-effect waves-light"
                   >
                     <span>
-                      <FontAwesomeIcon icon={faUser} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        color="#ffff"
+                        size={"lg"}
+                      />
                     </span>{" "}
                     Users
                   </button>
@@ -172,7 +193,11 @@ const NavBar = () => {
                     class="btn btn-info  btn-sm waves-effect waves-light"
                   >
                     <span>
-                      <FontAwesomeIcon icon={faUser} color="#ffff" size={"lg"} />
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        color="#ffff"
+                        size={"lg"}
+                      />
                     </span>{" "}
                     Username
                   </button>
@@ -185,7 +210,11 @@ const NavBar = () => {
                     type="button"
                     class="btn btn-warning  btn-sm waves-effect waves-light"
                   >
-                    <FontAwesomeIcon icon={faRightFromBracket} color="#ffff" size={"lg"} />
+                    <FontAwesomeIcon
+                      icon={faRightFromBracket}
+                      color="#ffff"
+                      size={"lg"}
+                    />
                   </button>
                 </div>
               </Nav>
@@ -194,9 +223,14 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn btn-danger  btn-sm waves-effect waves-light"
+                    className="btn btn-danger  btn-sm waves-effect waves-light"
+                    onClick={() => navigate("/auth")}
                   >
-                    <FontAwesomeIcon icon={faPowerOff} color="#ffff" size={"lg"} />
+                    <FontAwesomeIcon
+                      icon={faPowerOff}
+                      color="#ffff"
+                      size={"lg"}
+                    />
                   </button>
                 </div>
               </Nav>

@@ -1,0 +1,31 @@
+/* .container-test {
+  margin: ;
+} */
+
+.card-box {
+  border: black solid 1px;
+}
+
+.btn-ct {
+  background-color: #5fbeaa !important;
+  margin-bottom: 5px;
+}
+
+.categories {
+  margin: 4px, 4px;
+  padding: 4px;
+  width: 700px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#menulist::-webkit-scrollbar {
+  height: 5px;
+}
+
+#menulist::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+  outline: 1px solid slategrey;
+}

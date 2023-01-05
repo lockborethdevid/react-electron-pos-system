@@ -47,8 +47,148 @@ const Content = () => {
                   </div>
                 </div>
                 <hr className="my-3" />
-                <div className="row">
-                  <div></div>
+                <div className="row mx-4">
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card col-2">
+                    <div class="image">
+                      <img src="https://food-guide.canada.ca/themes/custom/wxtsub_bootstrap/images/food_guide_visual_en.png" />
+                    </div>
+                    <div class="title">
+                      <h6>Coca</h6>
+                    </div>
+                    <div className="col des">
+                      <p>
+                        STOCK 0 <br />
+                        asdasd8.00
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

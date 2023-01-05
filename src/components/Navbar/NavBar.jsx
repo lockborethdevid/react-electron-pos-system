@@ -33,7 +33,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <Navbar bg="light" expand="lg" className="px-4 pt-3">
+      <Navbar bg="light" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav ">
           <div className="d-flex justify-content-between w-100">
@@ -41,26 +41,27 @@ const NavBar = () => {
               <Nav className="mx-2 mb-3 btn-product">
                 <div className="button-list pull-left m-t-15 m-l-10">
                   <div className="btn-group p_one">
-                    <button
-                      id="barcodeIcon"
-                      type="button"
-                      className="btn barIcon waves-effect waves-light"
-                    >
-                      <FontAwesomeIcon
-                        icon={faBarcode}
-                        color="#ffff"
-                        size={"sm"}
-                      />
-                    </button>
-                    <button
-                      id="productModal"
-                      data-toggle="modal"
-                      data-target="#Products"
-                      type="button"
-                      class="btn btn-nav btn-default  waves-effect waves-light"
-                    >
-                      Products
-                    </button>
+                    <div>
+                      <button
+                        id="barcodeIcon"
+                        type="button"
+                        className="btn barIcon waves-effect waves-light"
+                      >
+                        <FontAwesomeIcon
+                          icon={faBarcode}
+                          color="#ffff"
+                          size={"sm"}
+                        />
+                      </button>
+                      <button
+                        id="productModal"
+                        type="button"
+                        class="btn btn-nav btn-default  waves-effect waves-light"
+                      >
+                        Products
+                      </button>
+                    </div>
+
                     <button
                       id="plusIcon"
                       type="button"
@@ -230,7 +231,6 @@ const NavBar = () => {
                     id="exit"
                     type="button"
                     class="btn btn-warning  btn-nav waves-effect waves-light"
-                    onClick={() => logout()}
                   >
                     <FontAwesomeIcon
                       icon={faRightFromBracket}
@@ -246,7 +246,7 @@ const NavBar = () => {
                     id="close"
                     type="button"
                     className="btn btn-danger  btn-nav waves-effect waves-light"
-                    // onClick={() => navigate("/auth")}
+                    onClick={() => navigate("/auth")}
                   >
                     <FontAwesomeIcon
                       icon={faPowerOff}

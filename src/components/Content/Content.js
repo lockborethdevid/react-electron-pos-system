@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./Content.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getCategory } from "../../services/product-service";
 
 const Content = () => {
+  useEffect(() => {
+    getCategory().then((response) => {
+      console.log("All categories", response);
+    });
+  }, []);
   return (
     <div className="container-test m-4">
       <div id="pos-view">

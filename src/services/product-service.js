@@ -21,3 +21,13 @@ export const addCategory = async (category, token) => {
       return response;
     });
 };
+
+export const getCategory = async (token) => {
+  return await axios
+    .get(API_URL + "/store/category", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((response) => {
+      return response;
+    });
+};

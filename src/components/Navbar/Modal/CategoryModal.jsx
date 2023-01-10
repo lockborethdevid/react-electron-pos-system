@@ -6,18 +6,16 @@ import { useState } from "react";
 import { addCategory } from "../../../services/product-service";
 
 function CategoryModal(props) {
-  //   useEffect(() => {
-  //     console.log(props);
-  //   }, []);
   const [category, setCategory] = useState("");
   const token = localStorage.getItem("user");
   const handleAddCategory = async (e) => {
     e.preventDefault();
     addCategory(category, token).then((response) => {
-      console.log("Add Category: ", response);
+      if (response.status === 200) {
+        console.log("Add Category: ", response);
+      }
     });
-    console.log("add");
-    // window.location.reload();
+    window.location.reload();
   };
   return (
     <Modal

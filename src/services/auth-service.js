@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL = "https://pos-api-three.vercel.app/auth";
 
-export const Signup = (
+export const Signup = async (
   username,
   email,
   password,
@@ -10,7 +10,7 @@ export const Signup = (
   storeLocation,
   storeName
 ) => {
-  return axios
+  return await axios
     .post(
       API_URL + "/signup",
       {
@@ -36,8 +36,8 @@ export const Signup = (
     });
 };
 
-export const Signin = (email, password) => {
-  return axios
+export const Signin = async (email, password) => {
+  return await axios
     .post(
       API_URL + "/login",
       {
@@ -52,9 +52,23 @@ export const Signin = (email, password) => {
       }
     )
     .then((response) => {
-      if (response.data.results) {
-        localStorage.setItem("user", response.data.results);
-      }
+      // if (response.data.results) {
+      //   localStorage.setItem("user", response.data.results);
+      // }
+      return response;
+    });
+};
+
+export const logout = async (token) => {
+  return await axios
+    .delete(API_URL + "/logout", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      },
+    })
+    .then((response) => {
       return response;
     });
 };

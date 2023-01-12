@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./NavBar.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -18,16 +18,37 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../../services/auth-service";
 
 const NavBar = () => {
-  // useEffect(() => {
-  //   console.log("token user", localStorage.getItem("user"));
-  // }, []);
-  const token = localStorage.getItem("user");
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    setToken(localStorage.getItem("user"));
+  });
   const [modalCategoryShow, setCategoryModalShow] = React.useState(false);
   const [modalProductShow, setProductModalShow] = React.useState(false);
   const navigate = useNavigate();
-  const logout = () => {
+  const handleLogout = () => {
+    try {
+      logout(token)
+        .then((response) => {
+          if (
+            response.status === 200 &&
+            response.data.message === "successful logout"
+          ) {
+            localStorage.removeItem("user");
+            navigate("/auth");
+          }
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log("message error: ", error);
+        });
+    } catch (err) {
+      console.log("logout function error message: ", err);
+    }
+  };
+  const testlogout = () => {
     localStorage.removeItem("user");
     navigate("/auth");
   };
@@ -56,7 +77,7 @@ const NavBar = () => {
                       <button
                         id="productModal"
                         type="button"
-                        class="btn btn-nav btn-default  waves-effect waves-light"
+                        className="btn btn-nav btn-default  waves-effect waves-light"
                       >
                         Products
                       </button>
@@ -78,26 +99,26 @@ const NavBar = () => {
                 </div>
               </Nav>
               <Nav className=" mb-3 btn-category">
-                <div class="button-list pull-left m-t-15 m-l-10">
-                  <div class="btn-group p_two">
+                <div className="button-list pull-left m-t-15 m-l-10">
+                  <div className="btn-group p_two">
                     <button
                       id="gridIcon"
                       type="button"
-                      class="btn  gridIcon btn-warning waves-effect waves-light"
+                      className="btn  gridIcon btn-warning waves-effect waves-light"
                     >
                       ⋮⋮⋮
                     </button>
                     <button
                       id="categoryModal"
                       type="button"
-                      class="btn  btn-nav btn-default waves-effect waves-light"
+                      className="btn  btn-nav btn-default waves-effect waves-light"
                     >
                       Categories
                     </button>
                     <button
                       id="plusIcon"
                       type="button"
-                      class="btn  plusIcon btn-warning waves-effect waves-light"
+                      className="btn  plusIcon btn-warning waves-effect waves-light"
                       onClick={() => setCategoryModalShow(true)}
                     >
                       <FontAwesomeIcon
@@ -111,7 +132,7 @@ const NavBar = () => {
               </Nav>
 
               <Nav className="mx-2 mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+                <div className="button-list pull-left m-t-15 m-l-10">
                   <button className="btn tapIcon">
                     <FontAwesomeIcon
                       icon={faShoppingBasket}
@@ -122,14 +143,14 @@ const NavBar = () => {
                   <button
                     id="openTab"
                     type="button"
-                    class="btn  btn-nav btn-info waves-effect waves-light"
+                    className="btn  btn-nav btn-info waves-effect waves-light"
                   >
                     Open Tabs
                   </button>
                 </div>
               </Nav>
               <Nav className="mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10 d-flex">
+                <div className="button-list pull-left m-t-15 m-l-10 d-flex">
                   <button className="btn userIcon">
                     <FontAwesomeIcon icon={faUser} color="#ffff" size={"sm"} />
                   </button>
@@ -137,8 +158,8 @@ const NavBar = () => {
                   <button
                     id="customzerOrder"
                     type="button"
-                    onclick="$(this).getCustomerOrders()"
-                    class=" btn-nav btn btn-info waves-effect waves-light "
+                    onClick="$(this).getCustomerOrders()"
+                    className=" btn-nav btn btn-info waves-effect waves-light "
                   >
                     Customer Orders
                   </button>
@@ -147,12 +168,12 @@ const NavBar = () => {
             </div>
             <div className="d-flex">
               <Nav className="mx-1 mb-3 btn-product">
-                <div class="button-list pull-left m-t-15 m-l-10">
-                  <div class="btn-group p_one">
+                <div className="button-list pull-left m-t-15 m-l-10">
+                  <div className="btn-group p_one">
                     <button
                       id="setting"
                       type="button"
-                      class="btn  btn-nav btn-warning waves-effect waves-light"
+                      className="btn  btn-nav btn-warning waves-effect waves-light"
                     >
                       <FontAwesomeIcon
                         icon={faGear}
@@ -165,7 +186,7 @@ const NavBar = () => {
               </Nav>
 
               <Nav className="mx-1 mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+                <div className="button-list pull-left m-t-15 m-l-10">
                   <button className="btn creditIcon waves-effect waves-light">
                     <FontAwesomeIcon
                       icon={faCreditCard}
@@ -176,28 +197,28 @@ const NavBar = () => {
                   <button
                     id="transaction"
                     type="button"
-                    class="btn  btn-nav waves-effect waves-light"
+                    className="btn  btn-nav waves-effect waves-light"
                   >
                     Transactions
                   </button>
                 </div>
               </Nav>
               <Nav className="mx-1 mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+                <div className="button-list pull-left m-t-15 m-l-10">
                   <button className="btn userIcons">
                     <FontAwesomeIcon icon={faUser} color="#ffff" size={"sm"} />
                   </button>
                   <button
                     id="user"
                     type="button"
-                    class="btn   btn-nav waves-effect waves-light"
+                    className="btn   btn-nav waves-effect waves-light"
                   >
                     Users
                   </button>
                   <button
                     id="plusUser"
                     type="button"
-                    class="btn plusUserIcon   btn-nav waves-effect waves-light"
+                    className="btn plusUserIcon   btn-nav waves-effect waves-light"
                   >
                     <FontAwesomeIcon
                       icon={faPlus}
@@ -208,7 +229,7 @@ const NavBar = () => {
                 </div>
               </Nav>
               <Nav className="mx-1 mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+                <div className="button-list pull-left m-t-15 m-l-10">
                   <button className="btn user-btn">
                     <FontAwesomeIcon
                       icon={faUser}
@@ -219,18 +240,19 @@ const NavBar = () => {
                   <button
                     id="username"
                     type="button"
-                    class="btn text-secondary  btn-nav waves-effect waves-light"
+                    className="btn text-secondary  btn-nav waves-effect waves-light"
                   >
                     Username
                   </button>
                 </div>
               </Nav>
               <Nav className="mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+                <div className="button-list pull-left m-t-15 m-l-10">
                   <button
                     id="exit"
                     type="button"
-                    class="btn btn-warning  btn-nav waves-effect waves-light"
+                    className="btn btn-warning  btn-nav waves-effect waves-light"
+                    onClick={() => handleLogout()}
                   >
                     <FontAwesomeIcon
                       icon={faRightFromBracket}
@@ -241,12 +263,12 @@ const NavBar = () => {
                 </div>
               </Nav>
               <Nav className="mx-1 mb-3">
-                <div class="button-list pull-left m-t-15 m-l-10">
+                <div className="button-list pull-left m-t-15 m-l-10">
                   <button
                     id="close"
                     type="button"
                     className="btn btn-danger  btn-nav waves-effect waves-light"
-                    onClick={() => navigate("/auth")}
+                    onClick={() => testlogout()}
                   >
                     <FontAwesomeIcon
                       icon={faPowerOff}

@@ -1,14 +1,21 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import { addCategory } from "../../../services/product-service";
 
 function CategoryModal(props) {
   const [category, setCategory] = useState("");
-  const token = localStorage.getItem("user");
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    setToken(localStorage.getItem("user"));
+    console.log("category: ", category);
+  });
+
+  // Add Category
   const handleAddCategory = async (e) => {
+    console.log("add categories");
     e.preventDefault();
     addCategory(category, token).then((response) => {
       if (response.status === 200) {

@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Content.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getCategory } from "../../services/product-service";
+import { TokenContext } from "../../pages/Auth";
 
 const Content = () => {
+  const [categories, setCategories] = useState([]);
+  const token = window.localStorage.getItem("user");
+
+  // api call to get all categories
   useEffect(() => {
-    getCategory().then((response) => {
+    getCategory(token).then((response) => {
       console.log("All categories", response);
+      setCategories(response.data);
+      console.log("array of objects", categories);
     });
   }, []);
   return (
@@ -36,20 +43,19 @@ const Content = () => {
                   </form>
                 </div>
                 <div className="col-md-7">
-                  <div id="menulist" className="categories float-end">
-                    <button className="btn btn-ct mx-2">All</button>
-                    <button className="btn btn-ct  mx-2">Foods</button>
+                  <div id="menulist" className="categories">
+                    <button className="btn btn-ct  mx-2">All</button>
+                    {categories.map((category, index) => (
+                      <button className="btn btn-ct  mx-2" id={index}>
+                        {category.categoriesName}
+                      </button>
+                    ))}
+
+                    {/* <button className="btn btn-ct  mx-2">Foods</button>
                     <button className="btn btn-ct  mx-2">Drinks</button>
                     <button className="btn btn-ct  mx-2">Desserts</button>
                     <button className="btn btn-ct mx-2">All</button>
-                    <button className="btn btn-ct mx-2">All</button>
-                    <button className="btn btn-ct  mx-2">Foods</button>
-                    <button className="btn btn-ct  mx-2">Drinks</button>
-                    <button className="btn btn-ct  mx-2">Desserts</button>
-                    <button className="btn btn-ct mx-2">All</button>
-                    <button className="btn btn-ct  mx-2">Foods</button>
-                    <button className="btn btn-ct  mx-2">Drinks</button>
-                    <button className="btn btn-ct  mx-2">Desserts</button>
+                    <button className="btn btn-ct mx-2">All</button> */}
                   </div>
                 </div>
                 <hr className="my-3" />

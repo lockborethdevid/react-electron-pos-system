@@ -30,6 +30,10 @@
   outline: 1px solid slategrey;
 }
 
+#menulist {
+  display: flex;
+  justify-content: start;
+}
 
 .card {
   padding: 5px;
@@ -40,7 +44,7 @@
   margin: 1%;
   background-color: #f2f4f2;
 }
-.title{
+.title {
   padding-top: 10px;
 }
 .image img {
@@ -49,8 +53,7 @@
   width: 100%;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-
 }
-.des>p{
+.des > p {
   font-size: 10px !important;
 }

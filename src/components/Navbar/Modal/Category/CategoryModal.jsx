@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import React, { useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
-import { addCategory } from "../../../services/product-service";
+import { addCategory } from "../../../../services/product-service";
 
 function CategoryModal(props) {
   const [category, setCategory] = useState("");
@@ -22,7 +22,6 @@ function CategoryModal(props) {
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
-      centered
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">Category</Modal.Title>

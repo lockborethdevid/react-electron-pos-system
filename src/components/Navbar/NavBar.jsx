@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./NavBar.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ProductModel from "./Modal/ProductModal";
-import CategoryModal from "./Modal/CategoryModal";
+import ProductModel from "./Modal/Product/ProductModal";
+import CategoryModal from "./Modal/Category/CategoryModal";
+import DisplayCategoryModal from "./Modal/Category/DisplayCategoryModal"
 import {
   faBarcode,
   faCreditCard,
-  faFaceGrinWide,
   faGear,
-  faGrin,
   faPlus,
   faPowerOff,
   faRightFromBracket,
@@ -18,7 +17,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-
+import DiaplayProductModal from "./Modal/Product/DiaplayProductModal";
 const NavBar = () => {
   // useEffect(() => {
   //   console.log("token user", localStorage.getItem("user"));
@@ -26,6 +25,8 @@ const NavBar = () => {
   const token = localStorage.getItem("user");
   const [modalCategoryShow, setCategoryModalShow] = React.useState(false);
   const [modalProductShow, setProductModalShow] = React.useState(false);
+  const [modalDisplayCategoryShow, setDisplayCategoryShow] = React.useState(false);
+  const [modalDisplayProductShow, setDisplayProductShow] = React.useState(false);
   const navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("user");
@@ -41,7 +42,7 @@ const NavBar = () => {
               <Nav className="mx-2 mb-3 btn-product">
                 <div className="button-list pull-left m-t-15 m-l-10">
                   <div className="btn-group p_one">
-                    <div>
+                    <div  onClick={() => setDisplayProductShow(true)}>
                       <button
                         id="barcodeIcon"
                         type="button"
@@ -80,20 +81,22 @@ const NavBar = () => {
               <Nav className=" mb-3 btn-category">
                 <div class="button-list pull-left m-t-15 m-l-10">
                   <div class="btn-group p_two">
-                    <button
-                      id="gridIcon"
-                      type="button"
-                      class="btn  gridIcon btn-warning waves-effect waves-light"
-                    >
-                      ⋮⋮⋮
-                    </button>
-                    <button
-                      id="categoryModal"
-                      type="button"
-                      class="btn  btn-nav btn-default waves-effect waves-light"
-                    >
-                      Categories
-                    </button>
+                    <div  onClick={() => setDisplayCategoryShow(true)}>
+                      <button
+                        id="gridIcon"
+                        type="button"
+                        class="btn  gridIcon btn-warning waves-effect waves-light"
+                      >
+                        ⋮⋮⋮
+                      </button>
+                      <button
+                        id="categoryModal"
+                        type="button"
+                        class="btn  btn-nav btn-default waves-effect waves-light"
+                      >
+                        Categories
+                      </button>
+                    </div>
                     <button
                       id="plusIcon"
                       type="button"
@@ -270,6 +273,14 @@ const NavBar = () => {
       <CategoryModal
         show={modalCategoryShow}
         onHide={() => setCategoryModalShow(false)}
+      />
+      <DisplayCategoryModal
+        show={modalDisplayCategoryShow}
+        onHide={() => setDisplayCategoryShow(false)}
+      />
+      <DiaplayProductModal
+      show={modalDisplayProductShow}
+      onHide={() => setDisplayProductShow(false)}
       />
     </>
   );

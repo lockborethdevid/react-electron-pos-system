@@ -44,6 +44,7 @@ button {
 
 #productModal,
 #categoryModal {
+  border-radius: 0px !important;
   height: 34px;
   line-height: 18px !important;
   text-align: center !important;
@@ -91,6 +92,7 @@ button {
 }
 
 .gridIcon {
+  border-radius: 5px 0px 0px 5px !important;
   background-color: #56ab99 !important;
   height: 34px;
   border: none !important;

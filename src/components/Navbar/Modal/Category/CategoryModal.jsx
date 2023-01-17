@@ -20,9 +20,10 @@ function CategoryModal(props) {
     addCategory(category, token).then((response) => {
       if (response.status === 200) {
         console.log("Add Category: ", response);
+        window.location.reload();
       }
     });
-    window.location.reload();
+    
   };
   return (
     <Modal

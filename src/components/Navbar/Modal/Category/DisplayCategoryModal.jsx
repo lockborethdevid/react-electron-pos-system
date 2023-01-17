@@ -10,9 +10,7 @@ import { faCircleExclamation, faExclamation } from "@fortawesome/free-solid-svg-
 
 function DisplayCategoryModal(props) {
     const [modalEditCategoryShow, setEditCategoryShow] = React.useState(false);
-
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
@@ -59,10 +57,7 @@ function DisplayCategoryModal(props) {
                 onHide={() => setEditCategoryShow(false)}
             />
             <Modal show={show} onHide={handleClose}
-
-
                 centered>
-
                 <Modal.Body className="d-flex flex-column text-center">
                     <div  className="align-self-center my-4" style={{borderRadius:100, background:"#ffff", width:110,height:110,border: "4px solid #f8bb86"}}>
                         <FontAwesomeIcon
@@ -72,8 +67,6 @@ function DisplayCategoryModal(props) {
                             size={"5x"}
                         />
                     </div>
-
-
                     <div className="d-flex flex-column text-center ">
                         <h4>Are you sure?</h4>
                         <h6>You are about to delete this category.</h6>
@@ -96,5 +89,6 @@ function DisplayCategoryModal(props) {
 
     );
 }
+
 
 export default DisplayCategoryModal;

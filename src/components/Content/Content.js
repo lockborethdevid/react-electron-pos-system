@@ -3,6 +3,7 @@ import "./Content.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getCategory } from "../../services/product-service";
 import { TokenContext } from "../../pages/Auth";
+import Order from "../Order/Orde";
 
 const Content = () => {
   const [categories, setCategories] = useState([]);
@@ -22,8 +23,8 @@ const Content = () => {
         <div className="row">
           {/* --- Order Info --- */}
           <div className="col-md-4">
-            <div className="card-box">
-              <p>order</p>
+            <div className="card-box mx-auto p-auto">
+            <Order/>
             </div>
           </div>
           {/* --- Menu Info --- */}

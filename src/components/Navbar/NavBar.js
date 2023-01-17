@@ -1,6 +1,5 @@
 
 import React, { useContext, useEffect, useState } from "react";
-import React from "react";
 
 import "./NavBar.css";
 import Nav from "react-bootstrap/Nav";

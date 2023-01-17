@@ -3,17 +3,20 @@ import "./Content.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getCategory } from "../../services/product-service";
 import { TokenContext } from "../../pages/Auth";
+import { categoriesAtom } from "../../atom/Atom";
+import { useRecoilState } from "recoil";
 
 const Content = () => {
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useRecoilState(categoriesAtom);
   const token = window.localStorage.getItem("user");
 
   // api call to get all categories
   useEffect(() => {
     getCategory(token).then((response) => {
-      console.log("All categories", response);
+      // console.log("All categories", response);
       setCategories(response.data);
-      console.log("array of objects", categories);
+      // console.log("array of objects", categories);
     });
   }, []);
   return (
@@ -46,7 +49,7 @@ const Content = () => {
                   <div id="menulist" className="categories">
                     <button className="btn btn-ct  mx-2">All</button>
                     {categories.map((category, index) => (
-                      <button className="btn btn-ct  mx-2" id={index}>
+                      <button className="btn btn-ct  mx-2" key={index}>
                         {category.categoriesName}
                       </button>
                     ))}

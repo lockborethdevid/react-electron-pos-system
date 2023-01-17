@@ -31,3 +31,31 @@ export const getCategory = async (token) => {
       return response;
     });
 };
+
+export const deleteCategory = async (token, id) => {
+  return await axios
+    .delete(API_URL + `/store/category/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((response) => {
+      return response;
+    });
+};
+
+export const editCategory = async (token, id, category) => {
+  return await axios
+    .put(
+      API_URL + `/store/category/${id}`,
+      {
+        categories: category,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    });
+};

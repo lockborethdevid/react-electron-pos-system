@@ -5,6 +5,7 @@ import { getCategory } from "../../services/product-service";
 import { TokenContext } from "../../pages/Auth";
 import Order from "../Order/Orde";
 
+
 const Content = () => {
   const [categories, setCategories] = useState([]);
   const token = window.localStorage.getItem("user");
@@ -208,7 +209,9 @@ const Content = () => {
           </div>
         </div>
       </div>
+
     </div>
+
   );
 };
 

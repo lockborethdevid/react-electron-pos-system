@@ -8,7 +8,8 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { tokenAtom } from "../../../../atom/Atom";
 function ProductModel(props) {
   const [show, setShow] = useState(false);
-  const [dataForm, setDataForm] = useState({ categoryId: "", productName: "", productImage: "", quantity: 0, price: 0 })
+  const [dataForm, setDataForm] = useState({ categoryId: "", productName: "", productImage: null, quantity: 0, price: 0 })
+  const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
   const [optionCategory, setOptionCategory] = useState([])
   const token = useRecoilValue(tokenAtom);
   // categoryId, productName, productImage, quantity, price data needed
@@ -17,15 +18,22 @@ function ProductModel(props) {
     const result = await getCategory(token)
     setOptionCategory(result.data)
   }
+
+  const handleChange = (event) => {
+    if (event.target.name === 'image') {
+      setImagePreviewUrl(URL.createObjectURL(event.target.files[0]));
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    Object.keys(dataForm).map((keys) => {
-      const valueData = dataForm[keys]
-      const data = `${keys}`
-      formData.append(data, valueData)
-    })
-    await addProduct(token, formData)
+    const data = new FormData();
+    data.append('categoryId', dataForm.categoryId);
+    data.append('productName', dataForm.productName);
+    data.append('productFile', dataForm.productImage);
+    data.append('quantity', dataForm.quantity);
+    data.append('price', dataForm.price);
+    await addProduct(token, data)
   }
 
   return (
@@ -91,7 +99,7 @@ function ProductModel(props) {
 
           <Form.Group className="mb-3" controlId="price">
             <h6>Picture</h6>
-            <Form.Control required onChange={e => setDataForm({ ...dataForm, productImage: e.target.files[0] })} type="file" />
+            <Form.Control onChange={e => setDataForm({ ...dataForm, productImage: e.target.files[0] })} type="file" />
           </Form.Group>
           {/* Submit button */}
           <Button variant="primary" type="submit" className="w-100">

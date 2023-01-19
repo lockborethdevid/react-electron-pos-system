@@ -64,14 +64,12 @@ export const editCategory = async (token, id, category) => {
 
 export const addProduct = async (token, formData) => {
   // const { categoryId, productName, quantity, price } = dataForm
-  console.log([...formData]);
   for (let item of formData) {
     console.log(item);
   }
   return await axios
     .post(
-      API_URL + "/store/product",
-      { ...formData },
+      API_URL + "/store/product", formData,
       {
         headers: {
           'Content-Type': 'multipart/form-data',
